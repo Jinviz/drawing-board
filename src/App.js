@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import Start from "./pages/Start";
 import Main from "./pages/Main";
 import Header from "./pages/Header";
+import History from './components/History';
 
 function App() {
   return (

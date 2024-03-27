@@ -4,14 +4,15 @@ import Drawing from './Drawing';
 
 
 
-const Board = () => {
+const Board = ({onClick}) => {
 
 	const renderDrawing = (i) => {
 		let boardRows = [];
 		for(let n=0; n < i/10; n++){
 			let drawings = [] 
-			for(let m=0; m < 10; n++){
-				drawings.push(<Drawing value={n*10 + m}  />)
+			for(let m=0; m < 10; m++){
+				let num = n*10 + m
+				drawings.push(<Drawing value={num} onClick={()=>onClick(num)} />)
 			}
 			boardRows.push(<BoardRow>{drawings}</BoardRow>)
 		}
@@ -36,6 +37,7 @@ const BoardRow = styled.div`
 `;
 
 const BoardWrapper = styled.div`
+    position: relative;
 	border: 1px solid rgba(255,255,255,0.1);
 	box-shadow: rgba(0,0,0,0.19);
 	border-radius: 9px;

@@ -1,11 +1,18 @@
 import React from 'react'
+import styled from 'styled-components'
 
-const Drawing = () => {
+const Drawing = ({num, onClick}) => {
   return (
-    <div>
-      
-    </div>
+    <DrawingButton onClick={() => onClick(num)}>
+        {num}
+    </DrawingButton>
   )
 }
 
 export default Drawing
+
+const DrawingButton = styled.button`
+    width: 70px;
+    height: 70px;
+    text-align: center;
+`;
