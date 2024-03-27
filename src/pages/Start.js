@@ -8,7 +8,6 @@ const Start = () => {
 
     return (
         <StartContainer>
-            <StartButton onClick={() => navigate('main')}>시작하기</StartButton>
         
             <AwardWrapper>
                 1등: 테슬라 x 1<br/>
@@ -18,6 +17,7 @@ const Start = () => {
                 5등: 추파춥스 x 30 <br/>
                 꽝: Nothing <br/> 
             </AwardWrapper>
+            <StartButton onClick={() => navigate('main')}>Start!</StartButton>
         </StartContainer>
     )
 }
@@ -25,21 +25,26 @@ export default Start
 
 const StartContainer = styled.div`
     position: relative;
-    display: block;
     justify-content: center;
     align-items: center;
+    text-align: center;
     z-index: 3;
 `;
 
 const AwardWrapper = styled.div`
-    font-size: 12px;
-    text-align: center;    
+    position: relative;
+    left: 43%;
+    font-size: 24px;
+    width: 600px;
+    text-align: left;
+    margin: 80px 0;    
 `; 
 
 const StartButton = styled.button`
-    width: 30px;
-    height: 30px;
-    background-color:
+    width: 15%;    
+    height: 80px;
+    background-color: #7f7f7f;
+    font-size: 24px;
     border-radius: 8px;
     border: solid 1px #ffffff
 `;
