@@ -46,5 +46,6 @@ const StartButton = styled.button`
     background-color: #7f7f7f;
     font-size: 24px;
     border-radius: 8px;
-    border: solid 1px #ffffff
+    border-line: 1px solid #ffffff;
+
 `;
