@@ -13,7 +13,7 @@ const Main = () => {
         RandomPrizeNumber();
     }, [])
     
-
+    console.log(isClicked);
     const RandomPrizeNumber = (drawingNum)=>{
         // let randomNumberPick = []
         // while(true){
@@ -44,8 +44,7 @@ const Main = () => {
         let fifthPrize = selectedNumbers.slice(17,47);
     
         setPrize([
-            [],firstPrize,secondPrize,thirdPrize,fourthPrize,fifthPrize
-        ]);
+            [],firstPrize,secondPrize,thirdPrize,fourthPrize,fifthPrize]);
     }
 
     const handleClickDrawing = (i) => {
@@ -104,7 +103,7 @@ const Main = () => {
     return (
         <Container>
             <MainWrapper>
-                <Board onClick={handleClickDrawing}/>
+                <Board onClick={handleClickDrawing} clicked={isClicked}/>
                 <History choiced={choiced} prize={prize}/>
             </MainWrapper>
             <ButtonWrapper>

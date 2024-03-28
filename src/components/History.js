@@ -23,7 +23,7 @@ const History = ({choiced,prize}) => {
         else{
             whatIsPrize = "=> 꽝";
         }
-        return WhatIsPrize;
+        return whatIsPrize;
     }
     
 

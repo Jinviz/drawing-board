@@ -4,15 +4,14 @@ import Drawing from './Drawing';
 
 
 
-const Board = ({onClick}) => {
-
+const Board = ({onClick, clicked}) => {	
 	const renderDrawing = (i) => {
 		let boardRows = [];
 		for(let n=0; n < i/10; n++){
 			let drawings = [] 
 			for(let m=0; m < 10; m++){
 				let num = n*10 + m
-				drawings.push(<Drawing value={num} onClick={()=>onClick(num)} />)
+				drawings.push(<Drawing num={num} onClick={()=>onClick(num)} clicked={clicked}/>)
 			}
 			boardRows.push(<BoardRow>{drawings}</BoardRow>)
 		}

@@ -10,12 +10,12 @@ const Start = () => {
         <StartContainer>
         
             <AwardWrapper>
-                1등: 테슬라 x 1<br/>
-                2등: 맥북프로 x 2<br/>
-                3등: 아이패드 x 4<br/>
-                4등: 문상5만원 x 10<br/>
-                5등: 추파춥스 x 30 <br/>
-                꽝: Nothing <br/> 
+            ★ 1등: 테슬라 x 1    ★<br/>
+            ★ 2등: 맥북프로 x 2  ★<br/>
+            ★ 3등: 아이패드 x 4  ★<br/>
+            ★ 4등: 문상5만원 x 10★<br/>
+            ★ 5등: 추파춥스 x 30 ★<br/>
+            ★ 꽝: Nothing       ★<br/> 
             </AwardWrapper>
             <StartButton onClick={() => navigate('main')}>Start!</StartButton>
         </StartContainer>

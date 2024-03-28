@@ -1,24 +1,12 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 
-const Drawing = ({num, onClick, choiced}) => {
-  const [clicked, setClicked] = useState(false);
-
-  useEffect(() => {
-    if(choiced && choiced.includes(num)){
-      setClicked(true);
-    }  
-    else{
-      setClicked(false);
-    }
-  }, [choiced,num])
-  
-
+const Drawing = ({num, onClick, clicked}) => {  
   return (
     <DrawingButton 
       onClick={() => onClick(num)}
-      disabled={clicked}
-      isClicked={clicked}
+      disabled={clicked ? !clicked[num] : false}
+      isClicked={clicked ? !clicked[num] : false}
     >
         {num}
     </DrawingButton>
@@ -31,6 +19,8 @@ const DrawingButton = styled.button`
     width: 70px;
     height: 70px;
     text-align: center;
+    font-size: 18px;
+    font-weight: bold;
 
     background-color: ${props => (props.isClicked ? 'black' : 'initial')};
     color: ${props => (props.isClicked ? 'white' : 'initial')};
