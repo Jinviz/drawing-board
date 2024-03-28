@@ -5,11 +5,12 @@ import Drawing from './Drawing';
 
 
 const Board = ({onClick, clicked}) => {	
+	
 	const renderDrawing = (i) => {
 		let boardRows = [];
 		for(let n=0; n < i/10; n++){
 			let drawings = [] 
-			for(let m=0; m < 10; m++){
+			for(let m=1; m <= 10; m++){
 				let num = n*10 + m
 				drawings.push(<Drawing num={num} onClick={()=>onClick(num)} clicked={clicked}/>)
 			}
@@ -24,7 +25,6 @@ const Board = ({onClick, clicked}) => {
         </BoardWrapper>
 	)
 }
-
 export default Board
 
 const BoardRow = styled.div`

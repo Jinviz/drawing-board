@@ -8,24 +8,12 @@ const Main = () => {
     const [drawingNum, setDrawingNum] = useState(100)
     const [isClicked, setIsClicked] = useState(Array(101).fill(true)) // 클릭된 버튼 판단
     const [choiced, setChoiced] = useState([]) // 뽑힌 번호
-    
+
     useEffect(() => {
         RandomPrizeNumber();
     }, [])
     
-    console.log(isClicked);
     const RandomPrizeNumber = (drawingNum)=>{
-        // let randomNumberPick = []
-        // while(true){
-        //     if (randomNumberPick.length === 46){
-        //         break
-        //     }
-        //     else{
-        //         const random = Math.ceil(Math.random() * drawingNum)
-        //         randomNumberPick.push(random)
-        //         randomNumberPick= [...new Set(randomNumberPick)];
-        //     }
-        // }
         let numbers = Array.from({ length: 100 }, (_, i) => i + 1);
 
         // 배열 섞기 (Fisher-Yates shuffle 알고리즘)
@@ -33,7 +21,6 @@ const Main = () => {
           const j = Math.floor(Math.random() * (i + 1));
           [numbers[i], numbers[j]] = [numbers[j], numbers[i]]; // ES6 구조 분해 할당을 사용한 요소 교환
         }
-      
         // 섞인 배열에서 앞의 46개 숫자 선택
         const selectedNumbers = numbers.slice(0, 46);
 
@@ -88,11 +75,17 @@ const Main = () => {
     }
 
     const RandomChoice = () =>{
-        let randomChoice = Math.ceil(Math.random() * drawingNum)
         let newChoiced = choiced.slice();
         let newIsClicked = isClicked.slice();
+        let randomChoice;
 
+        // 현재 뽑힌 뽑기는 제외하고 그 중에서 랜덤뽑기
+        do {
+            randomChoice = Math.ceil(Math.random() * drawingNum);
+        } while (newChoiced.includes(randomChoice));
         newChoiced.push(randomChoice);
+
+
         newIsClicked[randomChoice] = false;
         setChoiced(newChoiced);
         setIsClicked(newIsClicked);
@@ -103,6 +96,7 @@ const Main = () => {
     return (
         <Container>
             <MainWrapper>
+                <Image src="./image2.png"/>
                 <Board onClick={handleClickDrawing} clicked={isClicked}/>
                 <History choiced={choiced} prize={prize}/>
             </MainWrapper>
@@ -157,4 +151,11 @@ const RandomButton = styled.button`
     border-radius: 8px;
     border-line: 1px solid #ffffff;
     margin: 0 16px;
+`;
+
+const Image = styled.img`
+    position: absolute; 
+    left: 3vw;
+    top: 10vh;
+    width: 25vw;
 `;

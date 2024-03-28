@@ -4,21 +4,21 @@ import styled from 'styled-components';
 import Start from "./pages/Start";
 import Main from "./pages/Main";
 import Header from "./pages/Header";
-import History from './components/History';
 
 function App() {
   return (
     <Container>
 		  <Header/>
+
       <Routes>
         <Route path="/" element={<Start/>}/>
         <Route path="main" element={<Main/>}/>
       </Routes>
+
     </Container>
   )
 }
 export default App;
-
 
 const Container = styled.div`
 	display: block;

@@ -8,8 +8,8 @@ const Start = () => {
 
     return (
         <StartContainer>
-        
             <AwardWrapper>
+            <Image src='./image1.png'/><br/>
             ★ 1등: 테슬라 x 1    ★<br/>
             ★ 2등: 맥북프로 x 2  ★<br/>
             ★ 3등: 아이패드 x 4  ★<br/>
@@ -34,7 +34,7 @@ const StartContainer = styled.div`
 const AwardWrapper = styled.div`
     position: relative;
     left: 43%;
-    font-size: 24px;
+    font-size: 28px;
     width: 600px;
     text-align: left;
     margin: 80px 0;    
@@ -47,5 +47,12 @@ const StartButton = styled.button`
     font-size: 24px;
     border-radius: 8px;
     border-line: 1px solid #ffffff;
+`;
 
+const Image = styled.img`
+    left: 3vw;
+    top: 10vh;
+    width: 25vw;
+    transform: translateX(-25%) scale(1.5);    
+    padding-bottom: 60px;
 `;

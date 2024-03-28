@@ -6,22 +6,22 @@ const History = ({choiced,prize}) => {
     function WhatIsPrize(i){
         let whatIsPrize;
         if(prize[1].includes(i)){
-            whatIsPrize = "=> 1등";
+            whatIsPrize = "--> ★1등★";
         }
         else if(prize[2].includes(i)){
-            whatIsPrize = "=> 2등";
+            whatIsPrize = "--> 2등";
         }
         else if(prize[3].includes(i)){
-            whatIsPrize = "=> 3등";
+            whatIsPrize = "--> 3등";
         }
         else if(prize[4].includes(i)){
-            whatIsPrize = "=> 4등";
+            whatIsPrize = "--> 4등";
         }
         else if(prize[5].includes(i)){
-            whatIsPrize = "=> 5등";
+            whatIsPrize = "--> 5등";
         }
         else{
-            whatIsPrize = "=> 꽝";
+            whatIsPrize = "--> 꽝";
         }
         return whatIsPrize;
     }
